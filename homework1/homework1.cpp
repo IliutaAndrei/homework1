@@ -4,16 +4,14 @@
 #include "Exporter.h"
 
 
-const std::string csv_filename = "11apriorit.csv";
-const std::string json_filename = "11apriorit.json";
+const std::string csv_filename = "1apriorit.csv";
+const std::string json_filename = "1apriorit.json";
+const std::string path = "your-path-to-a-directory";
 
 int main()
 {
 	try
 	{
-		std::string path;
-		std::cout << "Path: ";
-		std::getline(std::cin, path);
 		std::vector<file_info> files = get_files_from_path(path);
 
 		Exporter::create_exporter("csv")->export_report(csv_filename, files);
